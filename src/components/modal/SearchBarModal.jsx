@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useFetchRegions, useFetchTheaters } from "../../hooks/useTheaters";
+import { useNavigate } from "react-router-dom";
 // import {
 //   useFetchFavoriteTheaters,
 //   useAddFavoriteTheater,
@@ -113,9 +114,10 @@ const SearchBarModal = ({ isVisible, onClose }) => {
   //   }
   // };
 
-  const setTheaterClickHandler = (theater, pfmc, event) => {
+  const navigate = useNavigate();
+  const setTheaterClickHandler = (theater, event) => {
     setSelectedTheater(theater);
-    event.preventDefault();
+    navigate(`/prmcpage/${theater}`);
   };
 
   if (isRLoading) return <p>Loading...</p>;
@@ -293,7 +295,6 @@ const SearchBarModal = ({ isVisible, onClose }) => {
                   onClick={(event) => {
                     setTheaterClickHandler(
                       theater.mt10id,
-                      theater.performances,
                       event
                     );
                   }}

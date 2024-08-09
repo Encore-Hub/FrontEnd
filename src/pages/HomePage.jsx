@@ -18,6 +18,7 @@ const HomePage = () => {
   const [theaterData, setTheaterData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
   useEffect(() => {
     const fetchRegionData = async () => {
       try {
@@ -46,8 +47,8 @@ const HomePage = () => {
     fetchTheaterData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <p className="text-center">Loading...</p>;
+  if (error) return <p className="text-center">Error: {error.message}</p>;
 
   return (
     <div>

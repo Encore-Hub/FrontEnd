@@ -15,9 +15,9 @@ const PrmcCard = ({ item }) => {
     <div className="m-2.5">
       {/* 공연 목록 카드 */}
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={item?.poster} />
+        <Card.Img variant="top" src={item?.poster} alt="Loading..." />
         <Card.Body className="d-grid gap-2">
-          <Card.Title>item.prfnm</Card.Title>
+          <Card.Title>{item.prfnm}</Card.Title>
           <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the cards content.
